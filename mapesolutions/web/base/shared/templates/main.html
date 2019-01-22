@@ -1,0 +1,172 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap 4 DatePicker</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://unpkg.com/gijgo@1.9.11/js/gijgo.min.js" type="text/javascript"></script>
+    <link href="https://unpkg.com/gijgo@1.9.11/css/gijgo.min.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<input type="button" id="clearFilters" value="Limpar Filtros">
+</br>
+<label for="datepicker_min">Data Mínima:</label>
+<input id="datepicker_min" width="276"/>
+<label for="datepicker_max">Data Máxima:</label>
+<input id="datepicker_max" width="276"/>
+<label for="medico">Médico:</label>
+<select id="medico">
+</select>
+<script>
+    let medicoFilter = "";
+    let mindataFilter = "";
+    let maxdataFilter = "";
+    $('#datepicker_min').datepicker({
+        uiLibrary: 'bootstrap4',
+        format: 'dd/mm/yyyy',
+        change: function (e) {
+            let data = $('#datepicker_min').val()
+            if (data != undefined) {
+                mindataFilter = "&data_0=" + data;
+            }
+            get_data("consultas/?format=json" + mindataFilter + maxdataFilter + medicoFilter);
+
+        },
+        {#minDate: today,#}
+        maxDate: function () {
+            return $('#datepicker_max').val();
+        }
+    });
+    $('#datepicker_max').datepicker({
+        uiLibrary: 'bootstrap4',
+        format: 'dd/mm/yyyy',
+        change: function (e) {
+            let data = $('#datepicker_max').val()
+            if (data != undefined) {
+                maxdataFilter = "&data_1=" + data;
+            }
+            get_data("consultas/?format=json" + mindataFilter + maxdataFilter + medicoFilter);
+        },
+        minDate: function () {
+            return $('#datepicker_min').val();
+        }
+    });
+    $("#clearFilters").click(function () {
+        medicoFilter = "";
+        mindataFilter = "";
+        maxdataFilter = "";
+        $('#datepicker_min').val("");
+        $('#datepicker_max').val("");
+        load_doctors();
+        get_data("consultas/?format=json" + mindataFilter + maxdataFilter + medicoFilter); 
+    });
+
+
+    const formatter = new Intl.NumberFormat('pt-BR', {
+        {#style: 'currency',#}
+        {#currency: 'BRL',#}
+        minimumFractionDigits: 2
+    });
+
+    $('select#medico').change(function () {
+        var optionSelected = $(this).find("option:selected");
+        var valueSelected = optionSelected.val();
+        var textSelected = optionSelected.text();
+        if (!valueSelected || /^\s*$/.test(valueSelected)) {
+            medicoFilter = "";
+        }
+        else {
+            medicoFilter = "&medico=" + textSelected;
+
+        }
+        get_data("consultas/?format=json" + mindataFilter + maxdataFilter + medicoFilter);
+    });
+
+      function get_data(url) {
+        // DO GET
+        $.ajax({
+            type: "GET",
+            url: url,
+            success: function (result) {
+                $('#consultasTbl tbody tr').each(function (index, item) {
+                    item.remove();
+                });
+                $.each(result, function (i, consultas) {
+
+                    var consultasRow = '<tr>' +
+                        '<td>' + consultas.nome_medico + '</td>' +
+                        '<td>' + consultas.id + '</td>' +
+                        '<td>' + new Date(consultas.data).toLocaleDateString("pt-BR") + '</td>' +
+                        '<td>' + formatter.format(consultas.valor) + '</td>' +
+                        '<td>' + formatter.format(consultas.gasto) + '</td>' +
+                        '<td>' + consultas.qtd_exames + '</td>' +
+                        '</tr>';
+
+                    $('#consultasTbl tbody').append(consultasRow);
+
+                });
+
+                $("#consultasTbl tbody tr:odd").addClass("info");
+                $("#consultasTbl tbody tr:even").addClass("success");
+            },
+            error: function (e) {
+                alert("ERROR: ", e);
+                console.log("ERROR: ", e);
+            }
+        });
+    }
+
+    function load_doctors() {
+        $.ajax({
+            type: "GET",
+            url: "medicos/?format=json",
+            success: function (result) {
+                $('select#medico option').each(function (index, item) {
+                    item.remove();
+                });
+                $('select#medico').append("<option value=\"\">Selecione o Médico</option>");
+                $.each(result, function (i, medicos) {
+
+                    var medicosOption = "<option value=\"" + medicos.medico_id + "\">" + medicos.nome_medico + "</option>";
+
+                    $('select#medico').append(medicosOption);
+
+                });
+            },
+            error: function (e) {
+                alert("ERROR: ", e);
+                console.log("ERROR: ", e);
+            }
+        });
+    }
+
+    $(document).ready(function () {
+
+
+        get_data("consultas/?format=json");
+        load_doctors();
+
+
+    })
+</script>
+​
+<div class="container">
+    <table id="consultasTbl" class="table table-bordered">
+        <thead>
+        <tr>
+            <th>Nome do Médico</th>
+            <th>Número da Guia</th>
+            <th>Data da Consulta</th>
+            <th>Valor da Consulta</th>
+            <th>Gasto por Consulta</th>
+            <th>Qtde Exames</th>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

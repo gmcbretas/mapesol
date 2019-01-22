@@ -1,0 +1,21 @@
+version: '2'
+services:
+  db:
+    image: postgres:11
+    ports:
+      - "5442:5432"
+    environment:
+      POSTGRES_PASSWORD: secret01
+  web:
+    build:
+       context: mapesolutions/web
+       dockerfile: ../web.Dockerfile
+    working_dir: /code
+    environment:
+      DATABASE_URL: postgres://postgres:secret01@db:5432/postgres?currentSchema=public
+      DJANGO_SETTINGS_MODULE: base.settings
+    command: python3 ./manage.py runserver --insecure 0:8000
+    ports:
+      - "1027:8000"
+    links:
+      - db

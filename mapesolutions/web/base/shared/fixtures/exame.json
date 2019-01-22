@@ -1,0 +1,346 @@
+[
+    {
+        "model": "shared.Exame",
+        "fields": {
+            "tipo": 2222,
+            "consulta_id": 1,
+            "valor": 15
+        }
+    },
+    {
+        "model": "shared.Exame",
+        "fields": {
+            "tipo": 2222,
+            "consulta_id": 4,
+            "valor": 15
+        }
+    },
+    {
+        "model": "shared.Exame",
+        "fields": {
+            "tipo": 2222,
+            "consulta_id": 6,
+            "valor": 15
+        }
+    },
+    {
+        "model": "shared.Exame",
+        "fields": {
+            "tipo": 2222,
+            "consulta_id": 9,
+            "valor": 15
+        }
+    },
+    {
+        "model": "shared.Exame",
+        "fields": {
+            "tipo": 2222,
+            "consulta_id": 11,
+            "valor": 15
+        }
+    },
+    {
+        "model": "shared.Exame",
+        "fields": {
+            "tipo": 2222,
+            "consulta_id": 14,
+            "valor": 15
+        }
+    },
+    {
+        "model": "shared.Exame",
+        "fields": {
+            "tipo": 2222,
+            "consulta_id": 16,
+            "valor": 15
+        }
+    },
+    {
+        "model": "shared.Exame",
+        "fields": {
+            "tipo": 2222,
+            "consulta_id": 21,
+            "valor": 15
+        }
+    },
+    {
+        "model": "shared.Exame",
+        "fields": {
+            "tipo": 2222,
+            "consulta_id": 24,
+            "valor": 15
+        }
+    },
+    {
+        "model": "shared.Exame",
+        "fields": {
+            "tipo": 2222,
+            "consulta_id": 26,
+            "valor": 15
+        }
+    },
+    {
+        "model": "shared.Exame",
+        "fields": {
+            "tipo": 2222,
+            "consulta_id": 29,
+            "valor": 15
+        }
+    },
+    {
+        "model": "shared.Exame",
+        "fields": {
+            "tipo": 3333,
+            "consulta_id": 1,
+            "valor": 8
+        }
+    },
+    {
+        "model": "shared.Exame",
+        "fields": {
+            "tipo": 3333,
+            "consulta_id": 4,
+            "valor": 8
+        }
+    },
+    {
+        "model": "shared.Exame",
+        "fields": {
+            "tipo": 3333,
+            "consulta_id": 6,
+            "valor": 8
+        }
+    },
+    {
+        "model": "shared.Exame",
+        "fields": {
+            "tipo": 3333,
+            "consulta_id": 8,
+            "valor": 8
+        }
+    },
+    {
+        "model": "shared.Exame",
+        "fields": {
+            "tipo": 3333,
+            "consulta_id": 9,
+            "valor": 8
+        }
+    },
+    {
+        "model": "shared.Exame",
+        "fields": {
+            "tipo": 3333,
+            "consulta_id": 11,
+            "valor": 8
+        }
+    },
+    {
+        "model": "shared.Exame",
+        "fields": {
+            "tipo": 3333,
+            "consulta_id": 13,
+            "valor": 8
+        }
+    },
+    {
+        "model": "shared.Exame",
+        "fields": {
+            "tipo": 3333,
+            "consulta_id": 14,
+            "valor": 8
+        }
+    },
+    {
+        "model": "shared.Exame",
+        "fields": {
+            "tipo": 3333,
+            "consulta_id": 16,
+            "valor": 8
+        }
+    },
+    {
+        "model": "shared.Exame",
+        "fields": {
+            "tipo": 3333,
+            "consulta_id": 18,
+            "valor": 8
+        }
+    },
+    {
+        "model": "shared.Exame",
+        "fields": {
+            "tipo": 3333,
+            "consulta_id": 19,
+            "valor": 8
+        }
+    },
+    {
+        "model": "shared.Exame",
+        "fields": {
+            "tipo": 3333,
+            "consulta_id": 21,
+            "valor": 8
+        }
+    },
+    {
+        "model": "shared.Exame",
+        "fields": {
+            "tipo": 3333,
+            "consulta_id": 23,
+            "valor": 8
+        }
+    },
+    {
+        "model": "shared.Exame",
+        "fields": {
+            "tipo": 3333,
+            "consulta_id": 24,
+            "valor": 8
+        }
+    },
+    {
+        "model": "shared.Exame",
+        "fields": {
+            "tipo": 3333,
+            "consulta_id": 26,
+            "valor": 8
+        }
+    },
+    {
+        "model": "shared.Exame",
+        "fields": {
+            "tipo": 3333,
+            "consulta_id": 28,
+            "valor": 8
+        }
+    },
+    {
+        "model": "shared.Exame",
+        "fields": {
+            "tipo": 3333,
+            "consulta_id": 29,
+            "valor": 8
+        }
+    },
+    {
+        "model": "shared.Exame",
+        "fields": {
+            "tipo": 4444,
+            "consulta_id": 2,
+            "valor": 12
+        }
+    },
+    {
+        "model": "shared.Exame",
+        "fields": {
+            "tipo": 4444,
+            "consulta_id": 3,
+            "valor": 12
+        }
+    },
+    {
+        "model": "shared.Exame",
+        "fields": {
+            "tipo": 4444,
+            "consulta_id": 8,
+            "valor": 12
+        }
+    },
+    {
+        "model": "shared.Exame",
+        "fields": {
+            "tipo": 4444,
+            "consulta_id": 12,
+            "valor": 12
+        }
+    },
+    {
+        "model": "shared.Exame",
+        "fields": {
+            "tipo": 4444,
+            "consulta_id": 17,
+            "valor": 12
+        }
+    },
+    {
+        "model": "shared.Exame",
+        "fields": {
+            "tipo": 4444,
+            "consulta_id": 18,
+            "valor": 12
+        }
+    },
+    {
+        "model": "shared.Exame",
+        "fields": {
+            "tipo": 4444,
+            "consulta_id": 22,
+            "valor": 12
+        }
+    },
+    {
+        "model": "shared.Exame",
+        "fields": {
+            "tipo": 4444,
+            "consulta_id": 23,
+            "valor": 12
+        }
+    },
+    {
+        "model": "shared.Exame",
+        "fields": {
+            "tipo": 4444,
+            "consulta_id": 27,
+            "valor": 12
+        }
+    },
+    {
+        "model": "shared.Exame",
+        "fields": {
+            "tipo": 4444,
+            "consulta_id": 28,
+            "valor": 12
+        }
+    },
+    {
+        "model": "shared.Exame",
+        "fields": {
+            "tipo": 5555,
+            "consulta_id": 5,
+            "valor": 10
+        }
+    },
+    {
+        "model": "shared.Exame",
+        "fields": {
+            "tipo": 5555,
+            "consulta_id": 10,
+            "valor": 10
+        }
+    },
+    {
+        "model": "shared.Exame",
+        "fields": {
+            "tipo": 5555,
+            "consulta_id": 15,
+            "valor": 10
+        }
+    },
+    {
+        "model": "shared.Exame",
+        "fields": {
+            "tipo": 5555,
+            "consulta_id": 20,
+            "valor": 10
+        }
+    },
+    {
+        "model": "shared.Exame",
+        "fields": {
+            "tipo": 5555,
+            "consulta_id": 30,
+            "valor": 10
+        }
+    }
+]
