@@ -133,7 +133,7 @@
                     var consultasRow = '<tr>' +
                         '<td>' + consultas.nome_medico + '</td>' +
                         '<td>' + consultas.id + '</td>' +
-                        '<td>' + new Date(consultas.data).toLocaleDateString("pt-BR") + '</td>' +
+                        '<td>' + new Date(consultas.data).toLocaleDateString("pt-BR", {timeZone: 'UTC'})  + '</td>' +
                         '<td>' + formatter.format(consultas.valor) + '</td>' +
                         '<td>' + formatter.format(consultas.gasto) + '</td>' +
                         '<td>' + consultas.qtd_exames + '</td>' +
