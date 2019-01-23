@@ -28,7 +28,7 @@ class MedicoViewSet(viewsets.ModelViewSet):
     """
     API endpoint
     """
-    queryset = Consulta.objects.values('medico_id','nome_medico').distinct()
+    queryset = Consulta.objects.values('medico_id','nome_medico').distinct().order_by('nome_medico')
     serializer_class = MedicoSerializer
 
 def main(request):
